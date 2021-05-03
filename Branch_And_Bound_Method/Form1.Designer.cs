@@ -30,11 +30,14 @@ namespace Branch_And_Bound_Method
         private void InitializeComponent()
         {
             this.dataGridViewInput = new System.Windows.Forms.DataGridView();
+            this.dataGridViewOutput = new System.Windows.Forms.DataGridView();
             this.P = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.t = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.G = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewOutput = new System.Windows.Forms.DataGridView();
+            this.Is1oo1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Is1oo2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Is2oo3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput)).BeginInit();
             this.SuspendLayout();
@@ -46,12 +49,24 @@ namespace Branch_And_Bound_Method
             this.P,
             this.S,
             this.t,
-            this.G});
+            this.G,
+            this.Is1oo1,
+            this.Is1oo2,
+            this.Is2oo3});
             this.dataGridViewInput.Location = new System.Drawing.Point(13, 13);
             this.dataGridViewInput.Name = "dataGridViewInput";
             this.dataGridViewInput.RowTemplate.Height = 25;
-            this.dataGridViewInput.Size = new System.Drawing.Size(449, 206);
+            this.dataGridViewInput.Size = new System.Drawing.Size(745, 206);
             this.dataGridViewInput.TabIndex = 0;
+            // 
+            // dataGridViewOutput
+            // 
+            this.dataGridViewOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOutput.Location = new System.Drawing.Point(13, 235);
+            this.dataGridViewOutput.Name = "dataGridViewOutput";
+            this.dataGridViewOutput.RowTemplate.Height = 25;
+            this.dataGridViewOutput.Size = new System.Drawing.Size(406, 206);
+            this.dataGridViewOutput.TabIndex = 1;
             // 
             // P
             // 
@@ -73,20 +88,26 @@ namespace Branch_And_Bound_Method
             this.G.HeaderText = "G";
             this.G.Name = "G";
             // 
-            // dataGridViewOutput
+            // Is1oo1
             // 
-            this.dataGridViewOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOutput.Location = new System.Drawing.Point(509, 13);
-            this.dataGridViewOutput.Name = "dataGridViewOutput";
-            this.dataGridViewOutput.RowTemplate.Height = 25;
-            this.dataGridViewOutput.Size = new System.Drawing.Size(406, 206);
-            this.dataGridViewOutput.TabIndex = 1;
+            this.Is1oo1.HeaderText = "1oo1";
+            this.Is1oo1.Name = "Is1oo1";
+            // 
+            // Is1oo2
+            // 
+            this.Is1oo2.HeaderText = "1oo2";
+            this.Is1oo2.Name = "Is1oo2";
+            // 
+            // Is2oo3
+            // 
+            this.Is2oo3.HeaderText = "2oo3";
+            this.Is2oo3.Name = "Is2oo3";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 274);
+            this.ClientSize = new System.Drawing.Size(927, 496);
             this.Controls.Add(this.dataGridViewOutput);
             this.Controls.Add(this.dataGridViewInput);
             this.Name = "Form1";
@@ -100,11 +121,14 @@ namespace Branch_And_Bound_Method
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewInput;
+        private System.Windows.Forms.DataGridView dataGridViewOutput;
         private System.Windows.Forms.DataGridViewTextBoxColumn P;
         private System.Windows.Forms.DataGridViewTextBoxColumn S;
         private System.Windows.Forms.DataGridViewTextBoxColumn t;
         private System.Windows.Forms.DataGridViewTextBoxColumn G;
-        private System.Windows.Forms.DataGridView dataGridViewOutput;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Is1oo1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Is1oo2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Is2oo3;
     }
 }
 
