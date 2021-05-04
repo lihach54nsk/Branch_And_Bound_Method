@@ -56,9 +56,9 @@ namespace Branch_And_Bound_Method.Modules
                 var is1oo2 = inputData[i].Is1oo2 ? 1 : 0;
                 var is2oo3 = inputData[i].Is2oo3 ? 1 : 0;
 
-                times[i] = (1 / inputData[i].t) * is1oo1
-                    + (2 / (3 * inputData[i].t)) * is1oo2
-                    + (6 / (5 * inputData[i].t)) * is2oo3;
+                times[i] = ((1 / inputData[i].t) * is1oo1)
+                    + ((2 / (3 * inputData[i].t)) * is1oo2)
+                    + ((6 / (5 * inputData[i].t)) * is2oo3);
             }
             return times.Sum();
         }
