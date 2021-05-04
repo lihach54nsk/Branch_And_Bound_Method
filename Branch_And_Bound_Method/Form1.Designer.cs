@@ -30,7 +30,6 @@ namespace Branch_And_Bound_Method
         private void InitializeComponent()
         {
             this.dataGridViewInput = new System.Windows.Forms.DataGridView();
-            this.dataGridViewOutput = new System.Windows.Forms.DataGridView();
             this.P = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.S = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.t = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +37,8 @@ namespace Branch_And_Bound_Method
             this.Is1oo1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Is1oo2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Is2oo3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewOutput = new System.Windows.Forms.DataGridView();
+            this.calculateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput)).BeginInit();
             this.SuspendLayout();
@@ -58,15 +59,6 @@ namespace Branch_And_Bound_Method
             this.dataGridViewInput.RowTemplate.Height = 25;
             this.dataGridViewInput.Size = new System.Drawing.Size(745, 206);
             this.dataGridViewInput.TabIndex = 0;
-            // 
-            // dataGridViewOutput
-            // 
-            this.dataGridViewOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOutput.Location = new System.Drawing.Point(13, 235);
-            this.dataGridViewOutput.Name = "dataGridViewOutput";
-            this.dataGridViewOutput.RowTemplate.Height = 25;
-            this.dataGridViewOutput.Size = new System.Drawing.Size(406, 206);
-            this.dataGridViewOutput.TabIndex = 1;
             // 
             // P
             // 
@@ -103,11 +95,31 @@ namespace Branch_And_Bound_Method
             this.Is2oo3.HeaderText = "2oo3";
             this.Is2oo3.Name = "Is2oo3";
             // 
+            // dataGridViewOutput
+            // 
+            this.dataGridViewOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOutput.Location = new System.Drawing.Point(13, 235);
+            this.dataGridViewOutput.Name = "dataGridViewOutput";
+            this.dataGridViewOutput.RowTemplate.Height = 25;
+            this.dataGridViewOutput.Size = new System.Drawing.Size(406, 206);
+            this.dataGridViewOutput.TabIndex = 1;
+            // 
+            // calculateButton
+            // 
+            this.calculateButton.Location = new System.Drawing.Point(719, 268);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(75, 23);
+            this.calculateButton.TabIndex = 2;
+            this.calculateButton.Text = "Calculate";
+            this.calculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(927, 496);
+            this.Controls.Add(this.calculateButton);
             this.Controls.Add(this.dataGridViewOutput);
             this.Controls.Add(this.dataGridViewInput);
             this.Name = "Form1";
@@ -129,6 +141,7 @@ namespace Branch_And_Bound_Method
         private System.Windows.Forms.DataGridViewCheckBoxColumn Is1oo1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Is1oo2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Is2oo3;
+        private System.Windows.Forms.Button calculateButton;
     }
 }
 
