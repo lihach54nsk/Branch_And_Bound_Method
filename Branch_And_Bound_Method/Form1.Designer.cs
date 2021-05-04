@@ -160,7 +160,7 @@ namespace Branch_And_Bound_Method
             this.timeTextBoxInput.Name = "timeTextBoxInput";
             this.timeTextBoxInput.Size = new System.Drawing.Size(100, 23);
             this.timeTextBoxInput.TabIndex = 4;
-            this.timeTextBoxInput.Text = "5";
+            this.timeTextBoxInput.Text = "0,5";
             // 
             // Form1
             // 
