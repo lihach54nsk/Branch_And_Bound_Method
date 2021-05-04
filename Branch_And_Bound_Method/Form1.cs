@@ -63,9 +63,8 @@ namespace Branch_And_Bound_Method
                 var solutionProbability = _currentComponent.CalculateCurrentProbability(inputData, acceptedSolution, acceptedSolution.Length - 1);
                 var solutionCost = _currentComponent.CalculateCurrentCost(inputData, acceptedSolution, acceptedSolution.Length - 1);
                 var solutionTime = 1 / _currentComponent.CalculateCurrentTime(inputData, acceptedSolution, acceptedSolution.Length - 1);
-                dataGridViewOutput.Rows.Add(solutionSequence, solutionProbability, solutionCost, solutionTime);
+                dataGridViewOutput.Rows.Add(solutionSequence, Math.Round(solutionProbability, 2), Math.Round(solutionCost, 2), Math.Round(solutionTime, 2));
             }
-            // var totalTime = _totalComponent.CalculateTotalTime(inputData);
         }
     }
 }
