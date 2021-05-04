@@ -17,8 +17,8 @@ namespace Branch_And_Bound_Method.Modules
                 var is2oo3 = inputData[i].Is2oo3 ? 1 : 0;
 
                 probabilities[i] = inputData[i].p * is1oo1
-                    + 2 * (inputData[i].p - inputData[i].p * inputData[i].p) * is1oo2
-                    + (3 * inputData[i].p * inputData[i].p - 2 - inputData[i].p * inputData[i].p * inputData[i].p) * is2oo3;
+                    + (2 * inputData[i].p - inputData[i].p * inputData[i].p) * is1oo2
+                    + (3 * inputData[i].p * inputData[i].p - 2 * inputData[i].p * inputData[i].p * inputData[i].p) * is2oo3;
             }
 
             var result = probabilities[0];
@@ -29,7 +29,7 @@ namespace Branch_And_Bound_Method.Modules
             return result;
         }
 
-        public double CaclulateTotalCost(InputData[] inputData)
+        public double CalculateTotalCost(InputData[] inputData)
         {
             double[] costs = new double[inputData.Length];
 
@@ -41,7 +41,7 @@ namespace Branch_And_Bound_Method.Modules
 
                 costs[i] = inputData[i].s * is1oo1
                     + 2 * inputData[i].G * inputData[i].s * is1oo2
-                    + 4 * inputData[i].G * is2oo3;
+                    + 4 * inputData[i].s * is2oo3;
             }
             return costs.Sum();
         }

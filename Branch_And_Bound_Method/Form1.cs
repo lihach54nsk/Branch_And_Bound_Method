@@ -10,14 +10,16 @@ namespace Branch_And_Bound_Method
     {
         private readonly CalculationService _calculationService;
         private readonly CombinationService _combinationService;
+        private readonly TotalComponent _totalComponent;
         public Form1()
         {
             _calculationService = new CalculationService();
             _combinationService = new CombinationService();
+            _totalComponent = new TotalComponent();
             InitializeComponent();
-            dataGridViewInput.Rows.Add("0,1", "1", "1", "2,1", true, false, false);
-            dataGridViewInput.Rows.Add("0,2", "2", "2", "2,2", true, true, false);
-            dataGridViewInput.Rows.Add("0,3", "3", "3", "2,3", true, true, true);
+            dataGridViewInput.Rows.Add("0,9", "2", "1", "1,1", true, false, false);
+            dataGridViewInput.Rows.Add("0,85", "3", "2", "1,3", true, true, false);
+            dataGridViewInput.Rows.Add("0,9", "2", "3", "1,2", true, true, true);
         }
 
         private void calculateButton_Click(object sender, EventArgs e)
@@ -40,11 +42,18 @@ namespace Branch_And_Bound_Method
 
             var solution = new int[dataGridViewInput.Rows.Count - 1];
             var solutions = new List<int[]>();
-            var tauMax = 5.0;
+            var tauMax = 10.0;
 
             var solutionMatrix = _combinationService.GenerateSolutionMatrix(inputData);
+            var totalProbability = _totalComponent.CalculateTotalProbability(inputData);
+            var totalProbability1 = _totalComponent.CalculateTotalProbability(inputData[0..1]);
+            var totalProbability2 = _totalComponent.CalculateTotalProbability(inputData[0..2]);
+            var totalCost = _totalComponent.CalculateTotalCost(inputData);
 
-            _calculationService.CalculateTheBranches(inputData, solutionMatrix, dataGridViewInput.Rows.Count - 1, tauMax, 0, solution, ref solutions);
+            _calculationService.CalculateTheBranches(inputData, solutionMatrix, dataGridViewInput.Rows.Count - 1, tauMax,
+                0, solution, ref solutions, totalProbability, totalCost);
+
+            var totalTime = _totalComponent.CalculateTotalTime(inputData);
 
 
         }

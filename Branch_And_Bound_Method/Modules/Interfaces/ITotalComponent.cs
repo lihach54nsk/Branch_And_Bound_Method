@@ -5,7 +5,7 @@ namespace Branch_And_Bound_Method.Modules.Interfaces
     public interface ITotalComponent
     {
         public double CalculateTotalProbability(InputData[] inputData);
-        public double CaclulateTotalCost(InputData[] inputData);
+        public double CalculateTotalCost(InputData[] inputData);
         public double CalculateTotalTime(InputData[] inputData);
     }
 }
