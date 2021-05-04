@@ -10,22 +10,26 @@ namespace Branch_And_Bound_Method.Modules
             int currentComponentIndex, int[] solution, ref List<int[]> solutions, double totalProbability, double totalCost)
         {
             var calculateService = new TotalComponent();
+            var currentService = new CurrentComponent();
 
             for (int j = 0; j < 3; j++)
             {
                 if (solutionMatrix[currentComponentIndex, j] == 1.0)
                 {
-                    var tauResult = calculateService.CalculateTotalTime(inputData[0..(currentComponentIndex + 1)]);
+                    var currentSolution = (int[])solution.Clone();
+                    currentSolution[currentComponentIndex] = j;
+                    var tauResult = currentService.CalculateCurrentTime(inputData, currentSolution, currentComponentIndex);
+                    //var tauResult = calculateService.CalculateTotalTime(inputData[0..(currentComponentIndex + 1)]);
 
                     for (int k = currentComponentIndex + 1; k < solutionLength; k++)
                         tauResult += GetTauMin(inputData[k], solutionMatrix[k, 1]);
 
                     if (tauResult < tauMax)
                     {
-                        var currentSolution = (int[])solution.Clone();
-                        currentSolution[currentComponentIndex] = j;
-                        var currentProbability = calculateService.CalculateTotalProbability(inputData[0..(currentComponentIndex + 1)]);
-                        var currentCost = calculateService.CalculateTotalCost(inputData[0..(currentComponentIndex + 1)]);
+                        var currentProbability = currentService.CalculateCurrentProbability(inputData, currentSolution, currentComponentIndex);
+                        //var currentProbability = calculateService.CalculateTotalProbability(inputData[0..(currentComponentIndex + 1)]);
+                        var currentCost = currentService.CalculateCurrentCost(inputData, currentSolution, currentComponentIndex);
+                        //var currentCost = calculateService.CalculateTotalCost(inputData[0..(currentComponentIndex + 1)]);
 
                         for (int k = currentComponentIndex + 1; k < solutionLength; k++)
                         {
