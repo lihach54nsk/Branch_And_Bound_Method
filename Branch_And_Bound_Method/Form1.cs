@@ -46,8 +46,6 @@ namespace Branch_And_Bound_Method
 
             var solutionMatrix = _combinationService.GenerateSolutionMatrix(inputData);
             var totalProbability = _totalComponent.CalculateTotalProbability(inputData);
-            var totalProbability1 = _totalComponent.CalculateTotalProbability(inputData[0..1]);
-            var totalProbability2 = _totalComponent.CalculateTotalProbability(inputData[0..2]);
             var totalCost = _totalComponent.CalculateTotalCost(inputData);
 
             _calculationService.CalculateTheBranches(inputData, solutionMatrix, dataGridViewInput.Rows.Count - 1, tauMax,
