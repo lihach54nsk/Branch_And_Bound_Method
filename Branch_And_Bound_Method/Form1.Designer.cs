@@ -166,7 +166,7 @@ namespace Branch_And_Bound_Method
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 496);
+            this.ClientSize = new System.Drawing.Size(768, 455);
             this.Controls.Add(this.timeTextBoxInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.calculateButton);
