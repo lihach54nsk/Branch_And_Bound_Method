@@ -2,6 +2,7 @@
 using Branch_And_Bound_Method.Modules.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Branch_And_Bound_Method
@@ -57,10 +58,16 @@ namespace Branch_And_Bound_Method
             var totalProbability = _totalComponent.CalculateTotalProbability(inputData);
             var totalCost = _totalComponent.CalculateTotalCost(inputData);
 
+            var executionTime = new Stopwatch();
+            executionTime.Start();
+
             _calculationService.CalculateTheBranches(inputData, solutionMatrix, dataGridViewInput.Rows.Count - 1, tauMax,
                 0, solution, ref solutions, totalProbability, totalCost);
 
+            executionTime.Stop();
+            
             solutionCountTextBox.Text = solutions.Count.ToString();
+            executionTimeTextBox.Text = executionTime.Elapsed.ToString();
             dataGridViewOutput.Rows.Clear();
             foreach (var acceptedSolution in solutions)
             {

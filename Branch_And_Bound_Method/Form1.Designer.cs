@@ -47,6 +47,8 @@ namespace Branch_And_Bound_Method
             this.timeTextBoxInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.solutionCountTextBox = new System.Windows.Forms.TextBox();
+            this.executionTimeTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput)).BeginInit();
             this.SuspendLayout();
@@ -139,7 +141,7 @@ namespace Branch_And_Bound_Method
             // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(465, 299);
+            this.calculateButton.Location = new System.Drawing.Point(465, 324);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(106, 23);
             this.calculateButton.TabIndex = 2;
@@ -158,7 +160,7 @@ namespace Branch_And_Bound_Method
             // 
             // timeTextBoxInput
             // 
-            this.timeTextBoxInput.Location = new System.Drawing.Point(577, 232);
+            this.timeTextBoxInput.Location = new System.Drawing.Point(599, 232);
             this.timeTextBoxInput.Name = "timeTextBoxInput";
             this.timeTextBoxInput.Size = new System.Drawing.Size(100, 23);
             this.timeTextBoxInput.TabIndex = 4;
@@ -175,17 +177,36 @@ namespace Branch_And_Bound_Method
             // 
             // solutionCountTextBox
             // 
-            this.solutionCountTextBox.Location = new System.Drawing.Point(577, 261);
+            this.solutionCountTextBox.Location = new System.Drawing.Point(599, 261);
             this.solutionCountTextBox.Name = "solutionCountTextBox";
             this.solutionCountTextBox.ReadOnly = true;
             this.solutionCountTextBox.Size = new System.Drawing.Size(100, 23);
             this.solutionCountTextBox.TabIndex = 6;
+            // 
+            // executionTimeTextBox
+            // 
+            this.executionTimeTextBox.Location = new System.Drawing.Point(599, 290);
+            this.executionTimeTextBox.Name = "executionTimeTextBox";
+            this.executionTimeTextBox.ReadOnly = true;
+            this.executionTimeTextBox.Size = new System.Drawing.Size(100, 23);
+            this.executionTimeTextBox.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(469, 293);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 15);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Executions time (ms): ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 455);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.executionTimeTextBox);
             this.Controls.Add(this.solutionCountTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.timeTextBoxInput);
@@ -222,6 +243,8 @@ namespace Branch_And_Bound_Method
         private System.Windows.Forms.TextBox timeTextBoxInput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox solutionCountTextBox;
+        private System.Windows.Forms.TextBox executionTimeTextBox;
+        private System.Windows.Forms.Label label3;
     }
 }
 
