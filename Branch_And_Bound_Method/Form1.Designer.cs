@@ -45,6 +45,8 @@ namespace Branch_And_Bound_Method
             this.calculateButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.timeTextBoxInput = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.solutionCountTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOutput)).BeginInit();
             this.SuspendLayout();
@@ -137,7 +139,7 @@ namespace Branch_And_Bound_Method
             // 
             // calculateButton
             // 
-            this.calculateButton.Location = new System.Drawing.Point(465, 265);
+            this.calculateButton.Location = new System.Drawing.Point(465, 299);
             this.calculateButton.Name = "calculateButton";
             this.calculateButton.Size = new System.Drawing.Size(106, 23);
             this.calculateButton.TabIndex = 2;
@@ -162,11 +164,30 @@ namespace Branch_And_Bound_Method
             this.timeTextBoxInput.TabIndex = 4;
             this.timeTextBoxInput.Text = "0,5";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(469, 264);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Solution count: ";
+            // 
+            // solutionCountTextBox
+            // 
+            this.solutionCountTextBox.Location = new System.Drawing.Point(577, 261);
+            this.solutionCountTextBox.Name = "solutionCountTextBox";
+            this.solutionCountTextBox.ReadOnly = true;
+            this.solutionCountTextBox.Size = new System.Drawing.Size(100, 23);
+            this.solutionCountTextBox.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 455);
+            this.Controls.Add(this.solutionCountTextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.timeTextBoxInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.calculateButton);
@@ -199,6 +220,8 @@ namespace Branch_And_Bound_Method
         private System.Windows.Forms.DataGridViewTextBoxColumn TOutput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox timeTextBoxInput;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox solutionCountTextBox;
     }
 }
 

@@ -22,6 +22,13 @@ namespace Branch_And_Bound_Method
             dataGridViewInput.Rows.Add("0,9", "2", "1", "1,1", true, false, false);
             dataGridViewInput.Rows.Add("0,85", "3", "2", "1,3", true, true, false);
             dataGridViewInput.Rows.Add("0,9", "2", "3", "1,2", true, true, true);
+            dataGridViewInput.Rows.Add("0,95", "2,5", "5", "1,5", false, true, true);
+            dataGridViewInput.Rows.Add("0,93", "1,5", "4", "1,35", false, true, false);
+            dataGridViewInput.Rows.Add("0,88", "1,8", "2,5", "1,25", true, false, true);
+            dataGridViewInput.Rows.Add("0,91", "2,6", "3,5", "1,8", true, true, false);
+            dataGridViewInput.Rows.Add("0,89", "2,2", "2,2", "1", false, true, true);
+            dataGridViewInput.Rows.Add("0,86", "1,6", "1,8", "1,11", true, true, false);
+            dataGridViewInput.Rows.Add("0,96", "1,9", "3,5", "1,12", true, true, true);
         }
 
         private void calculateButton_Click(object sender, EventArgs e)
@@ -53,6 +60,7 @@ namespace Branch_And_Bound_Method
             _calculationService.CalculateTheBranches(inputData, solutionMatrix, dataGridViewInput.Rows.Count - 1, tauMax,
                 0, solution, ref solutions, totalProbability, totalCost);
 
+            solutionCountTextBox.Text = solutions.Count.ToString();
             dataGridViewOutput.Rows.Clear();
             foreach (var acceptedSolution in solutions)
             {
